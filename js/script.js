@@ -7,10 +7,16 @@ let selectedColor, score, failedCount;
 
 init();
 
+newGame.addEventListener("click", init);
+
 function init() {
   scoreDOM.textContent = 0;
 
   score = 0;
+
+  boxes.forEach((box) => {
+    box.addEventListener("click", checkGame);
+  });
 
   getColors();
 }
@@ -27,8 +33,7 @@ function checkGame() {
     score += 5;
     getColors();
   } else {
-    this.style.backgroundColor = "transparent";
-    this.removeEventListener("click", checkGame);
+    this.style.display = "none";
     score--;
     failedCount++;
   }
@@ -54,9 +59,8 @@ function getColors() {
 
     colours.push(color);
 
+    box.style.display = "block";
     box.style.backgroundColor = color;
-
-    box.addEventListener("click", checkGame);
   });
 
   selectedColor = colours[Math.floor(Math.random() * colours.length)];
@@ -69,5 +73,3 @@ function getRGB() {
     Math.random() * 256
   )}, ${Math.floor(Math.random() * 256)})`;
 }
-
-newGame.addEventListener("click", init);
