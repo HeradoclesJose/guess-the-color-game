@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  outline: 0 !important;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 48%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $font-primary;
+  background-color: $color-background;
+  color: $color-font;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}

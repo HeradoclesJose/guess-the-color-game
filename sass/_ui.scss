@@ -1,0 +1,102 @@
+.nav {
+  background-color: $color-primary;
+  padding: $margin-medium 0 0 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  &__color {
+    margin: $margin-medium;
+    font-size: 6rem;
+    margin-bottom: $margin-medium;
+  }
+
+  &__menu {
+    background-color: $color-white;
+    width: 100%;
+    text-align: center;
+
+    padding: 0.5rem $margin-medium;
+  }
+
+  &__links {
+    max-width: 85rem;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+
+    & > * {
+      margin: 0 $margin-small;
+    }
+
+    :first-child {
+      margin-right: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  &__tittle {
+    font-size: 3.5rem;
+    margin: $margin-big;
+    text-align: center;
+  }
+
+  &__rule {
+    font-size: 2rem;
+    text-transform: none;
+
+    &:not(:last-of-type) {
+      margin-bottom: $margin-medium;
+    }
+  }
+
+  &__grid {
+    width: 70%;
+    max-width: 80rem;
+
+    margin-bottom: $margin-big;
+
+    display: grid;
+    place-content: center;
+    place-items: center;
+
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 25rem));
+    grid-auto-rows: minmax(10rem, 25rem);
+
+    gap: $margin-medium;
+  }
+
+  &__box {
+    height: 100%;
+    width: 100%;
+  }
+}
